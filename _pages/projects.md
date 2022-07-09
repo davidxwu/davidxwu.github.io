@@ -22,4 +22,4 @@ Edit distance can be naively computed in $$O(n^2)$$ using dynamic programming. C
 Given an input an undirected graph $$G$$ and two vertices $$s$$ and $$t$$, the undirected $$s-t$$ connectivity problem, called USTCON, asks whether or not the two vertices have a path connecting them. The time
 complexity to solve this problem is well-known to be linear with your favorite graph search algorithm (i.e. BFS or DFS). However, both of these algorithms require a linear space complexity as well. In fact, it is known that there exist randomized algorithms which only use _logarithmic_ space to solve USTCON. The question then arises on whether or not it is possible to construct _deterministic_ algorithms which use logarithmic space. In this paper, we survey the beautiful result of Reingold '08 to answer the question in the affirmative. 
 
-[Final project]({{ site.url }}/assets/pdf/18_434_Final_Project.pdf) for 18.434 (Seminar in TCS), taught by Prof. Dor Minzer in Fall 2021. 
+[Final project]({{ site.url }}/assets/pdf/18_434_Final_project.pdf) for 18.434 (Seminar in TCS), taught by Prof. Dor Minzer in Fall 2021. 
