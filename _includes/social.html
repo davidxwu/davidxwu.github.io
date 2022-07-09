@@ -52,6 +52,9 @@
             {%- if site.stackoverflow_id -%}
             <a href="https://stackoverflow.com/users/{{ site.stackoverflow_id }}" title="Stackoverflow"><i class="fab fa-stack-overflow"></i></a>
             {% endif %}
+            {%- if site.goodreads -%}
+            <a href="https://goodreads.com/user/show/{{ site.goodreads_username }}" title="Goodreads"><i class="fab fa-goodreads"></i></a>
+            {% endif %}
             {%- if site.rss_icon -%}
             <a href="{{ site.baseurl | prepend: site.url }}/feed.xml" title="RSS Feed"><i class="fas fa-rss-square"></i></a>
             {% endif %}
