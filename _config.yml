@@ -218,7 +218,7 @@ display_tags: [] # this tags will be dispalyed on the front page of your blog
 
 scholar:
 
-  last_name: Einstein
+  last_name: [Einstein]
   first_name: [Albert, A.]
 
   style: apa
