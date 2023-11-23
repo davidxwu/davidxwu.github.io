@@ -1,6 +1,13 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"NeurIPS":
+  url: https://neurips.cc/
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"ICML":
+  url: https://icml.cc/
+
+"ISIT":
+  url: https://isit2023.org/
+
+"SIOPT":
+  url: https://www.siam.org/publications/journals/siam-journal-on-optimization-siopt
+  color: "#770737"
