@@ -6,7 +6,7 @@
  * Themes
  ******************************************************************************/
 :root {
-  --global-bg-color: #ffffff;
+  --global-bg-color: #fff7e3;
   --global-code-bg-color: rgba(181, 9, 172, 0.05);
   --global-text-color: #000000;
   --global-text-color-light: #828282;
@@ -14,10 +14,10 @@
   --global-hover-color: #B509AC;
   --global-footer-bg-color: #1C1C1D;
   --global-footer-text-color: #e8e8e8;
-  --global-footer-link-color: #ffffff;
+  --global-footer-link-color: #fff7e3;
   --global-distill-app-color: #828282;
   --global-divider-color: rgba(0,0,0,.1);
-  --global-card-bg-color: #ffffff;
+  --global-card-bg-color: #fff7e3;
 }
 :root .fa-sun {
   display: none;
@@ -442,7 +442,7 @@ footer.sticky-bottom {
   color: #000000;
 }
 .pagination .page-item.active .page-link {
-  color: #ffffff;
+  color: #fff7e3;
   background-color: var(--global-theme-color);
 }
 .pagination .page-item.active .page-link:hover {
