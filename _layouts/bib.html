@@ -38,10 +38,17 @@
         {%- if site.max_author_limit and author_array_size > site.max_author_limit %}
           {% assign author_array_limit = site.max_author_limit %}
         {% endif %}
-
         {%- for author in entry.author_array limit: author_array_limit -%}
           {%- assign author_is_self = false -%}
+          {%- assign author_equal_contributor = false -%}
           {%- assign author_last_name = author.last | remove: "¶" | remove: "&" | remove: "*" | remove: "†" | remove: "^" -%}
+          {%- if entry.equal_contribution -%}
+            {%- for equal_contributor in entry.equal_contribution -%}
+              {%- if equal_contributor contains author.last -%}
+                {%- assign author_equal_contributor = true -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
           {%- if site.scholar.last_name contains author_last_name -%}
             {%- if site.scholar.first_name contains author.first -%}
               {%- assign author_is_self = true -%}
@@ -69,6 +76,9 @@
             {%- else -%}
               {{author.first}} {{author.last}}
             {%- endif -%}
+          {%- endif -%}
+          {%- if author_equal_contributor -%}
+            <sup>*</sup>
           {%- endif -%}
         {%- endfor -%}
         {%- assign more_authors = author_array_size | minus: author_array_limit -%}

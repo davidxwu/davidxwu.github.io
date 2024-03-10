@@ -11,3 +11,6 @@
 "SIOPT":
   url: https://www.siam.org/publications/journals/siam-journal-on-optimization-siopt
   color: "#770737"
+
+"STOC":
+  url: http://acm-stoc.org/

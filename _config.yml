@@ -225,8 +225,8 @@ display_tags: [] # this tags will be dispalyed on the front page of your blog
 
 scholar:
 
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Wu, X Wu]
+  first_name: [David X., David X, David X ,David, D.]
 
   style: apa
   locale: en
