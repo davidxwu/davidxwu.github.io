@@ -28,3 +28,11 @@
 "DeFord":
   - firstname: ["Daryl", "Daryl R"]
     url: https://www.math.wsu.edu/faculty/ddeford/
+
+"Rajaraman":
+  - firstname: ["Amit"]
+    url: https://amitrajaraman.github.io/
+
+"Liu":
+  - firstname: ["Kuikui"]
+    url: https://kuikuiliu.github.io/
