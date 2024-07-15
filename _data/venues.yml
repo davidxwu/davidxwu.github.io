@@ -4,9 +4,11 @@
 
 "ICML":
   url: https://icml.cc/
+  color: "#00369f"
 
 "ISIT":
   url: https://isit2023.org/
+  color: "#00369f"
 
 "SIOPT":
   url: https://www.siam.org/publications/journals/siam-journal-on-optimization-siopt
@@ -14,3 +16,7 @@
 
 "STOC":
   url: http://acm-stoc.org/
+
+"FOCS":
+  url: https://ieee-focs.org/
+  color: "#770737"
