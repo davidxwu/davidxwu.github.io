@@ -1,6 +1,10 @@
 "Wu":
   - firstname: ["David", "D.", "David X"]
 
+"Huang":
+  - firstname: ["Brice", "B."]
+    url: https://bricehuang.com/
+    
 "Raghavendra":
   - firstname: ["Prasad", "P."]
     url: https://people.eecs.berkeley.edu/~prasad/
