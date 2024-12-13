@@ -20,3 +20,7 @@
 "FOCS":
   url: https://ieee-focs.org/
   color: "#770737"
+
+"NeurIPS M3L":
+  url: https://sites.google.com/view/m3l-2024/
+  color: "#00369f"
