@@ -16,7 +16,8 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 I am a Ph.D. student at UC Berkeley, where I'm extremely fortunate to be coadvised by [Prasad Raghavendra](http://people.eecs.berkeley.edu/~prasad/) and [Anant Sahai](https://www2.eecs.berkeley.edu/Faculty/Homepages/sahai.html). 
-I'm broadly interested in problems at the intersection of theoretical computer science and statistics, such as Markov chains, statistical inference, and machine learning theory. 
+I'm broadly interested in problems related to theoretical computer science and statistics, such as Markov chains, statistical inference, and machine learning theory. 
+Recently, I have also been interested in LLM reasoning and RL for coding and math. 
 Last summer, I was an ML research intern at Windsurf working on coding agent capabilities and evals. 
 I'm grateful to be supported by an NSF GRFP fellowship and an OpenAI Superalignment Grant.
 
