@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getSelectedPublications, type Author } from '../data/publications';
+
+const selectedPubs = getSelectedPublications();
+
+function formatAuthors(authors: Author[], equalContribution?: boolean) {
+  return authors.map(a => {
+    const isMe = a.name.includes('David X.');
+    let formatted = isMe ? `<strong>${a.name}</strong>` : 
+      (a.url ? `<a href="${a.url}" target="_blank">${a.name}</a>` : a.name);
+    return equalContribution ? `${formatted}*` : formatted;
+  }).join(', ');
+}
+---
+
+<Layout>
+  <article class="about">
+    <div class="profile">
+      <img src="/img/prof_pic.jpg" alt="David X. Wu" class="profile-img" />
+      <div class="profile-info">
+        <h1>David X. Wu</h1>
+        <p class="subtitle">he/him/his</p>
+        <p class="affiliation">PhD Student, UC Berkeley</p>
+        <p class="email">david_wu [at] berkeley [dot] edu</p>
+      </div>
+    </div>
+
+    <div class="bio">
+      <p>
+        I am a Ph.D. student at UC Berkeley, where I'm extremely fortunate to be coadvised by 
+        <a href="https://people.eecs.berkeley.edu/~prasad/">Prasad Raghavendra</a> and 
+        <a href="https://people.eecs.berkeley.edu/~sahai/">Anant Sahai</a>.
+      </p>
+      <p>
+        I have recently been interested in LLM reasoning and RL for coding and math. 
+        Last summer, I was an ML research intern at Windsurf working on coding agent capabilities and evals.
+        I'm grateful to be supported by an NSF GRFP fellowship and an OpenAI Superalignment Grant.
+      </p>
+      <p>
+        I'm also broadly interested in problems related to theoretical computer science and statistics, 
+        such as Markov chains, statistical inference, and machine learning theory.
+      </p>
+      <p>
+        I graduated with a B.Sc. from MIT with a double major in mathematics (Course 18) and 
+        computer science (Course 6-3), where I was lucky to do research with 
+        <a href="https://people.csail.mit.edu/jsolomon/">Justin Solomon</a> and 
+        <a href="https://optml.mit.edu/">Suvrit Sra</a>. 
+        As an undergrad, I interned in quant finance at HRT and Akuna Capital.
+      </p>
+    </div>
+
+    <section class="selected">
+      <h2>Selected Publications</h2>
+      <ul class="pubs">
+        {selectedPubs.map(pub => (
+          <li>
+            <span class="venue-tag">{pub.venueShort}</span>
+            <span class="title">{pub.title}</span>
+            <span class="authors" set:html={formatAuthors(pub.authors, pub.equalContribution)} />
+            <span class="venue">{pub.venue}, {pub.year}</span>
+            {pub.arxiv && (
+              <span class="links">
+                <a href={`https://arxiv.org/abs/${pub.arxiv}`} target="_blank">arXiv</a>
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .about {
+    padding-bottom: 2rem;
+  }
+
+  .profile {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .profile-info h1 {
+    margin: 0 0 0.25rem;
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    margin: 0 0 0.5rem;
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+
+  .affiliation {
+    margin: 0 0 0.25rem;
+  }
+
+  .email {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .bio {
+    margin-bottom: 2.5rem;
+  }
+
+  section {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  section h2 {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  .pubs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pubs li {
+    margin-bottom: 1.5rem;
+  }
+
+  .venue-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    padding: 0.15rem 0.45rem;
+    background: var(--border);
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    font-weight: 500;
+    vertical-align: middle;
+  }
+
+  .pubs .title {
+    font-weight: 500;
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  .pubs .authors {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+
+  .pubs .venue {
+    display: block;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+  }
+
+  .pubs .links {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 0.35rem;
+  }
+
+  @media (max-width: 540px) {
+    .profile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.25rem;
+    }
+
+    .profile-img {
+      width: 130px;
+      height: 130px;
+    }
+  }
+</style>

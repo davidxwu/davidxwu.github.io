@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Notes | David X. Wu">
+  <article>
+    <h1>Notes</h1>
+    <p class="intro">
+      Informal notes and writeups on various topics.
+    </p>
+
+    <ul class="notes-list">
+      <li>
+        <a href="/pdf/interpolation.pdf" target="_blank">
+          <span class="title">Notes on Max-Cut and Min-Bisection</span>
+          <span class="description">Interpolation methods for random constraint satisfaction problems</span>
+        </a>
+      </li>
+    </ul>
+  </article>
+</Layout>
+
+<style>
+  h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .intro {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .notes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .notes-list li {
+    margin-bottom: 1.5rem;
+  }
+
+  .notes-list a {
+    display: block;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .notes-list a:hover {
+    border-color: var(--accent);
+    background: rgba(139, 64, 73, 0.03);
+  }
+
+  .title {
+    display: block;
+    font-weight: 500;
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+    color: var(--text);
+  }
+
+  .description {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+</style>
+
