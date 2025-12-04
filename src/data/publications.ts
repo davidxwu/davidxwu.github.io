@@ -27,9 +27,30 @@ const authors = {
   daryl: { name: "Daryl R. DeFord", url: "https://www.math.wsu.edu/faculty/ddeford/" },
   amit: { name: "Amit Rajaraman", url: "https://amitrajaraman.github.io/" },
   kuikui: { name: "Kuikui Liu", url: "https://kuikuiliu.github.io/" },
+  shreyas: { name: "Shreyas Kapur", url: "https://shreyaskapur.com/" },
 } as const;
 
 export const publications: Publication[] = [
+  {
+    title: "Synthetic Error Injection Fails to Elicit Self-Correction In Language Models",
+    authors: [authors.david, authors.shreyas],
+    venue: "arXiv",
+    venueShort: "arXiv",
+    year: 2025,
+    arxiv: "2512.02389",
+    selected: true,
+    equalContribution: true,
+  },
+  {
+    title: "Markov Chains Approximate Message Passing",
+    authors: [authors.amit, authors.david],
+    venue: "arXiv",
+    venueShort: "arXiv",
+    year: 2025,
+    arxiv: "2512.02384",
+    selected: true,
+    equalContribution: true,
+  },
   {
     title: "Weak Poincaré Inequalities, Simulated Annealing, and Sampling from Spherical Spin Glasses",
     authors: [authors.brice, authors.sidhanth, authors.amit, authors.david],
@@ -56,7 +77,7 @@ export const publications: Publication[] = [
     venueShort: "FOCS",
     year: 2024,
     arxiv: "2405.20849",
-    selected: true,
+    selected: false,
     equalContribution: true,
   },
   {
@@ -66,7 +87,7 @@ export const publications: Publication[] = [
     venueShort: "FOCS",
     year: 2024,
     arxiv: "2405.06616",
-    selected: true,
+    selected: false,
     equalContribution: true,
   },
   {
@@ -76,7 +97,7 @@ export const publications: Publication[] = [
     venueShort: "STOC",
     year: 2024,
     arxiv: "2402.13921",
-    selected: true,
+    selected: false,
     equalContribution: true,
   },
   {
