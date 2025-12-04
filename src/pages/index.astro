@@ -4,12 +4,13 @@ import { getSelectedPublications, type Author } from '../data/publications';
 
 const selectedPubs = getSelectedPublications();
 
-function formatAuthors(authors: Author[], equalContribution?: boolean) {
+function formatAuthors(authors: Author[], equalContribution?: Author[]) {
   return authors.map(a => {
     const isMe = a.name.includes('David X.');
     let formatted = isMe ? `<strong>${a.name}</strong>` : 
       (a.url ? `<a href="${a.url}" target="_blank">${a.name}</a>` : a.name);
-    return equalContribution ? `${formatted}*` : formatted;
+    const hasEqualContrib = equalContribution?.some(ec => ec.name === a.name);
+    return hasEqualContrib ? `${formatted}*` : formatted;
   }).join(', ');
 }
 ---

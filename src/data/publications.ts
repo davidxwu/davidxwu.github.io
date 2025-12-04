@@ -11,7 +11,7 @@ export interface Publication {
   year: number;
   arxiv?: string;
   selected?: boolean;
-  equalContribution?: boolean;
+  equalContribution?: Author[];  // List of authors with equal contribution
 }
 
 // Author directory with URLs
@@ -28,18 +28,19 @@ const authors = {
   amit: { name: "Amit Rajaraman", url: "https://amitrajaraman.github.io/" },
   kuikui: { name: "Kuikui Liu", url: "https://kuikuiliu.github.io/" },
   shreyas: { name: "Shreyas Kapur", url: "https://shreyaskapur.com/" },
+  stuart: { name: "Stuart Russell", url: "https://people.eecs.berkeley.edu/~russell/" },
 } as const;
 
 export const publications: Publication[] = [
   {
     title: "Synthetic Error Injection Fails to Elicit Self-Correction In Language Models",
-    authors: [authors.david, authors.shreyas],
+    authors: [authors.david, authors.shreyas, authors.anant, authors.stuart],
     venue: "arXiv",
     venueShort: "arXiv",
     year: 2025,
     arxiv: "2512.02389",
     selected: true,
-    equalContribution: true,
+    equalContribution: [authors.david, authors.shreyas],
   },
   {
     title: "Markov Chains Approximate Message Passing",
@@ -49,7 +50,7 @@ export const publications: Publication[] = [
     year: 2025,
     arxiv: "2512.02384",
     selected: true,
-    equalContribution: true,
+    equalContribution: [authors.amit, authors.david],
   },
   {
     title: "Weak Poincaré Inequalities, Simulated Annealing, and Sampling from Spherical Spin Glasses",
@@ -59,7 +60,7 @@ export const publications: Publication[] = [
     year: 2025,
     arxiv: "2411.09075",
     selected: true,
-    equalContribution: true,
+    equalContribution: [authors.brice, authors.sidhanth, authors.amit, authors.david],
   },
   {
     title: "Provable Weak-to-Strong Generalization via Benign Overfitting",
@@ -78,7 +79,7 @@ export const publications: Publication[] = [
     year: 2024,
     arxiv: "2405.20849",
     selected: false,
-    equalContribution: true,
+    equalContribution: [authors.kuikui, authors.sidhanth, authors.prasad, authors.amit, authors.david],
   },
   {
     title: "Fast Mixing in Sparse Random Ising Models",
@@ -88,7 +89,7 @@ export const publications: Publication[] = [
     year: 2024,
     arxiv: "2405.06616",
     selected: false,
-    equalContribution: true,
+    equalContribution: [authors.kuikui, authors.sidhanth, authors.amit, authors.david],
   },
   {
     title: "Robust recovery for stochastic block models, simplified and generalized",
@@ -98,7 +99,7 @@ export const publications: Publication[] = [
     year: 2024,
     arxiv: "2402.13921",
     selected: false,
-    equalContribution: true,
+    equalContribution: [authors.sidhanth, authors.prasad, authors.david],
   },
   {
     title: "Precise Asymptotic Generalization for Multiclass Classification with Overparameterized Linear Models",
